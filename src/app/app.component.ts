@@ -30,7 +30,11 @@ import { Component, trigger, state, style, transition, animate, keyframes } from
       })),
       transition('void => *', [
         style({ opacity: '0', transform: 'translateY(20px)' }),
-        animate('500ms 1s ease-out')
+        animate(500, keyframes([
+          style({opacity:0, transform: 'translateY(-30px)', offset: 0}),
+          style({opacity:1, transform: 'translateY(5px) scale(1.2)', offset: .3}),
+          style({opacity:1, transform: 'translateY(0px)', offset: 1})
+        ]))
       ])
     ])
   ]
